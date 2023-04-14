@@ -1,0 +1,16 @@
+Wyniki dla odpowiednich sampli:
+sample0.txt : Nie jest językiem naturalnym,
+sample1.txt : Jest językiem naturalnym,
+sample2.txt : Jest językiem naturalnym,
+sample3.txt : Jest językiem naturalnym,
+sample4.txt : Nie jest językiem naturalnym,
+sample5.txt : Nie jest językiem naturalnym.
+
+Aby dowiedzieć się czy badana próbka jest językiem naturalnym zastosowałem następujące metody:
+1. Obliczyłem warunkowe entropie wszystkich podanych języków naturalnych (norm_wiki).
+2. Dla każdego stopnia znalazłem entropię min i entropię max.
+3. Następnie dla każdej sampli sprawdzałem kolejne entropie warunkowe czy mieszczą się w przedziale [min;max].
+Ponadto, ze względu na to, iż jezyki naturalne mają zbliżone do siebie entropie warunkowe to przyjąłem, że entropie poszczególnych sampli powinny mieścić się przynajmniej w połowie zakresów [min;max] entropi warunkowych (zarówno dla słow jak i dla znaków). Stąd pierwsza przesłanka dlaczego sample1, sample2, sample3 są językami naturalnymi, ponieważ one mieściły się właśnie w połowie tych zakresów. Dodatkowo ręcznie sprawdziłem, czy we wszystkich samplach entropie warunkowe maleją wraz ze stopniem, co niestety nie dało żadnej dodatkowej informacji, ponieważ akurat w każdym pliku entropie warunkowe wraz ze stopniem maleją. Jednak zauważyłem, że entropie warunkowe dla słów niektórych plików (sample0, sample4, sample5) maleją niemalże do 0 wraz ze wzrostem stopnia (głównie dla stopnia 5), czego nie zauważyłem przy entropiach warunkowych plików norm_wiki oraz przy plikach sample1, sample2, sample3 - co dodatkowo skłoniło mnie do stwierdzenia, że pliki sample1, sample2, sample3 zawierają język naturalny. Przyjrzałem się również ręcznie wartością entropi warunkowych i rzeczywiście pliki sample1, sample2, sample3 mają zbliżone entropie do plików wejściowych (norm_wiki), jednak wyniki dla reszty sampli nie przypominają tych z plików wejściowych. Zatem to wszystko wpłynęło na moją ocenę, czy dane sample zawierają język naturalny czy też nie.
+
+
+PS W kodzie znajduję się tylko porównanie przedziałów [min;max] oraz oczywiście wyświetlenie wszystkich wymaganych entropi. Resztę kryteriów oceniłem ręcznie tak jak wspomniałem powyżej.
